@@ -4,14 +4,13 @@ import { getDataAPI } from '../actions/NewsAction'
 import TableUnvalidated from './TableUnvalidated'
 
 class MainUnvalidated extends Component {
-  // componentWillMount () {
-
-  // }
+  componentWillMount() {
+    this.props.getDataAPI()
+  }
   render() {
     return (
       <div>
         <h3>UNVALIDATED NEWS</h3>
-        <p>{JSON.stringify(this.props.dataNews.unvalidated) } </p>
         <table className="table table-striped table-hover table-bordered">
           <thead>
             <tr>

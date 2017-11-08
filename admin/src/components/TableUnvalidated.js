@@ -8,7 +8,7 @@ import {
 class TableUnvalidated extends Component {
 
   componentWillMount() {
-    // this.props.getDataAPI()
+    this.props.getDataAPI()
   }
 
   editing(news) {

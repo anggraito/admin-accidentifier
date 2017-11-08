@@ -23,9 +23,9 @@ export const selectToEdit = (data) => {
   }
 }
 
-export const updateDataAPI = (new_data) => {
+export const updateDataAPI = (new_data, _id) => {
   return (dispatch, getState) => {
-    const url = `http://localhost:4000/data_password/${new_data.id}`
+    const url = `http://localhost:4000/api/accident/${_id}`
     axios.patch(url, new_data).then(({ data }) => {
       dispatch(updateDataStore(data))
     })
@@ -39,14 +39,14 @@ export const updateDataStore = (data) => {
   }
 }
 
-export const destroyDataToEdit = () => {
-  return {
-    type: 'DESTROY_DATA_TO_EDIT'
-  }
-}
+// export const destroyDataToEdit = () => {
+//   return {
+//     type: 'DESTROY_DATA_TO_EDIT'
+//   }
+// }
 
-export const destroySearchResult = () => {
-  return {
-    type: 'DESTROY_SEARCH_RESULT'
-  }
-}
+// export const destroySearchResult = () => {
+//   return {
+//     type: 'DESTROY_SEARCH_RESULT'
+//   }
+// }
