@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export const getDataAPI = () => {
   return (dispatch, getState) => {
-    const url = 'http://localhost:4000/api/accident'
+    const url = 'http://35.196.134.74/api/accident/'
     axios.get(url).then(({ data }) => {
       dispatch(getData(data))
     })
@@ -25,7 +25,7 @@ export const selectToEdit = (data) => {
 
 export const updateDataAPI = (new_data, _id) => {
   return (dispatch, getState) => {
-    const url = `http://localhost:4000/api/accident/${_id}`
+    const url = `http://35.196.134.74/api/accident/${_id}`
     axios.patch(url, new_data).then(({ data }) => {
       dispatch(updateDataStore(data))
     })
