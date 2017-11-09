@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
-// import Navbar from './components/Navbar'
+import Navbar from './components/Navbar'
 // import Main from './components/Main'
 import MainUnvalidated from './components/MainUnvalidated'
 import MainValidated from './components/MainValidated'
@@ -18,12 +18,13 @@ class App extends Component {
   render() {
     return (
       <Provider store={store} >
-        <div className="App">
+        <div >
           <Router>
             <div className="container">
           {/* <Main /> */}
-          <Link to="/"  > Unvalidated News</Link>
-          <Link to="/validated-news"  > Validated News</Link>
+          {/* <Link to="/"  > Unvalidated News</Link>
+          <Link to="/validated-news"  > Validated News</Link> */}
+          <Navbar/>
           <Route exact path="/" component={MainUnvalidated} />
           <Route path="/validated-news" component={MainValidated} />
           <Route path="/edit" component={FormEdit} />

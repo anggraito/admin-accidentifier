@@ -19,7 +19,8 @@ class FormEdit extends Component {
           addressDetected: '',
           lat: '',
           lng: '',
-          valid: false
+          valid: false,
+          fireRedirect: false
     }
     this.handleFAddressChange = this.handleFAddressChange.bind(this)
     this.handleFLatitudeChange = this.handleFLatitudeChange.bind(this)
@@ -88,42 +89,45 @@ class FormEdit extends Component {
       })
     } else {
       alert('cannot send empty data')
-    }    
+    }
+    this.setState({ fireRedirect: true })
   }
   render() {
+    const { fireRedirect } = this.state
     return (
-      <div>
-        <h3>News Review and Validation</h3>
+      <div className="container">
+        <h3 style={{textAlign: 'center'}}>News Review and Validation</h3>
           <form onSubmit={this.handleSubmit}>
-            <div class="form-group">
+            <div className="form-group">
               <label >Title</label>
               <input readonly="" type="text" className="form-control" aria-describedby="emailHelp" placeholder="" value={this.state.title} />
             </div> 
-            <div class="form-group">
+            <div className="form-group">
               <label >Linksite</label>
               <input readonly="" type="text" className="form-control" aria-describedby="emailHelp" placeholder="" value={this.state.linksite} />
             </div> 
-            <div class="form-group">
+            <div className="form-group">
               <label >Address Detected</label>
               <input onChange={this.handleFAddressChange} type="text" className="form-control" aria-describedby="emailHelp" placeholder="" value={this.state.addressDetected} />
             </div> 
-            <div class="form-group">
+            <div className="form-group">
               <label >Latitude</label>
               <input onChange={this.handleFLatitudeChange}  type="number" className="form-control" aria-describedby="emailHelp" placeholder="" value={this.state.lat} />
             </div> 
-            <div class="form-group">
+            <div className="form-group">
               <label >Longitude</label>
               <input onChange={this.handleFLongitudeChange} type="number" className="form-control" aria-describedby="emailHelp" placeholder="" value={this.state.lng} />
             </div> 
-            <div class="form-group">
+            <div className="form-group">
               <label for="exampleSelect1">Validation</label>
-              <select onChange={this.handleFValidChange}  class="form-control" id="exampleSelect1">
+              <select onChange={this.handleFValidChange}  className="form-control" id="exampleSelect1">
                 <option value="false">Not Valid</option>
                 <option value="true">Valid</option>
               </select>
             </div>
-            <button type="submit" class="btn btn-primary">Validate</button>
+            <button type="submit" className="btn btn-primary">Validate</button>
           </form>
+          {fireRedirect && (<Redirect to={'/'}/>)}
       </div>
     )
   }

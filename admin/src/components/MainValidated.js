@@ -9,20 +9,9 @@ class Mainvalidated extends Component {
   // }
   render() {
     return (
-      <div>
-        <h3>VALIDATED NEWS </h3>
-        <table className="table table-striped table-hover table-bordered">
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>News Title</th>
-              <th>Linksite</th>
-              <th>Validation</th>
-              <th>Edit</th>
-            </tr>
-          </thead>
-          <TableValidated />
-        </table>
+      <div className="container"> 
+        <h3 style={{textAlign: 'center'}}>VALIDATED NEWS </h3>
+        <TableValidated />
       </div>
     )
   }

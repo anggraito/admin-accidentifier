@@ -14,10 +14,19 @@ class TableValidated extends Component {
   }
   render() {
     return (
-      <tbody>
+      <table className="table table-striped table-hover table-bordered">
+        <thead>
+          <tr style={{textAlign: 'center'}}>
+            <th>No</th>
+            <th>News Title</th>
+            <th>Linksite</th>
+            <th>Validation</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
         {this.props.dataNews.validated.map((news, index) => {
           return (
-            <tr className="warning" key={news.id}>
+            <tr key={news.id}>
               <td>{index+1} </td>
               <td>{news.title}</td>
               <td><a href={news.linksite} >{news.linksite} </a></td>
@@ -26,7 +35,7 @@ class TableValidated extends Component {
             </tr>
           )
         })}
-      </tbody>
+     </table>
     )
   }
 }
