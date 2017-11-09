@@ -20,8 +20,6 @@ class TableValidated extends Component {
             <th>No</th>
             <th>News Title</th>
             <th>Linksite</th>
-            <th>Validation</th>
-            <th>Edit</th>
           </tr>
         </thead>
         {this.props.dataNews.validated.map((news, index) => {
@@ -30,8 +28,7 @@ class TableValidated extends Component {
               <td>{index+1} </td>
               <td>{news.title}</td>
               <td><a href={news.linksite} >{news.linksite} </a></td>
-              <td>{news.valid}</td>
-              <td></td>
+              
             </tr>
           )
         })}
